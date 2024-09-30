@@ -1,8 +1,8 @@
 from flask import Flask, request 
 import asyncio, re
 from api.myBot import Bot
-from download import verificar_link, descarga
-from control import Seguridad
+from api.download import verificar_link, descarga
+from api.control import Seguridad
 
 
 

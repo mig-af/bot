@@ -33,7 +33,7 @@ async def messageHandler(data):
             await bot.sendChatAction(data["message"]["from"]["id"], "typing")
             await bot.messageSend(data["message"]["from"]["id"],bufferAudio[0])
     else:
-        await bot.messageSend(data["message"]["from"]["id"], "Link incorrecto")
+        await bot.messageSend(data["message"]["from"]["id"], f"Link incorrecto: {search}")
     
     #logging.info(f"funcion {messageHandler.__name__} ejecutada con exito")
     

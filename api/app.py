@@ -69,7 +69,7 @@ async def add_userCommand(data):
 
 
 
-@app.route("/webhook", methods=["POST"])
+@app.route("/webhook", methods=["POST", "GET"])
 async def main():
     
 

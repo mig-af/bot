@@ -21,7 +21,7 @@ async def messageHandler(data):
 
     
     #await messageSend(data["message"]["from"]["id"], "resultado:")
-    if(verificar_link(search) == True):
+    if(verificar_link(search)[0] == True):
         bufferAudio = descarga(search)
         if(bufferAudio[1] != "error"):
             title = bufferAudio[1]
@@ -33,7 +33,7 @@ async def messageHandler(data):
             await bot.sendChatAction(data["message"]["from"]["id"], "typing")
             await bot.messageSend(data["message"]["from"]["id"],bufferAudio[0])
     else:
-        await bot.messageSend(data["message"]["from"]["id"], f"Link incorrecto: {search}")
+        await bot.messageSend(data["message"]["from"]["id"], f"Link incorrecto: {search}{verificar_link(search)[1]}")
     
     #logging.info(f"funcion {messageHandler.__name__} ejecutada con exito")
     

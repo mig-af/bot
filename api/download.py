@@ -7,8 +7,8 @@ def verificar_link(url:str):
     try:
         YouTube(url).title
         return True
-    except:
-        return False
+    except Exception as error:
+        return (False, str(error))
 
 def descarga(url:str):
     
